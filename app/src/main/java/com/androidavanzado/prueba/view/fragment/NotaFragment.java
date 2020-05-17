@@ -115,6 +115,9 @@ public class NotaFragment extends Fragment {
             case R.id.action_add_nota:
                 mostrarDialogNuevaNota();
                 return true;
+            case R.id.action_delete_all:
+                viewModel.deleteAll();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

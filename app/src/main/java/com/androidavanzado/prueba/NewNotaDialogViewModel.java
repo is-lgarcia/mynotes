@@ -25,4 +25,13 @@ public class NewNotaDialogViewModel extends AndroidViewModel {
 
     // El Fragmento que inserte una nueva nota
     public void insertarNota(NotaEntity notaEntity){notaRepository.insertNota(notaEntity);}
+
+    //Funcion para actualizar una nueva nota
+    public void updateNota(NotaEntity entity){notaRepository.updateNota(entity);}
+
+    //Funcion para eliminar todas las notas
+    public void deleteAll(){notaRepository.deleteAll();}
+
+    //Funcion para eliminar por Id
+    public void deleteById(int id){notaRepository.deleteById(id);}
 }

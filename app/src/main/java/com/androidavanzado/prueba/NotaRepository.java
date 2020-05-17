@@ -39,5 +39,7 @@ public class NotaRepository {
                 notaDAO.update(nota));
     }
 
+    public void deleteAll(){notaDAO.deleteAll();}
 
+    public void deleteById(int id){notaDAO.deleteById(id);}
 }
