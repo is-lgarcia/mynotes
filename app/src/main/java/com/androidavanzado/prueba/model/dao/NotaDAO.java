@@ -1,10 +1,12 @@
-package com.androidavanzado.prueba;
+package com.androidavanzado.prueba.model.dao;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
+
+import com.androidavanzado.prueba.model.entity.NotaEntity;
 
 import java.util.List;
 

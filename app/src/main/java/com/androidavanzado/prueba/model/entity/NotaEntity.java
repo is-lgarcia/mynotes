@@ -1,4 +1,4 @@
-package com.androidavanzado.prueba;
+package com.androidavanzado.prueba.model.entity;
 
 
 import androidx.room.Entity;
