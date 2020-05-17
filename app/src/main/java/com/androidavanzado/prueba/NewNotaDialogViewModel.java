@@ -1,7 +1,7 @@
 package com.androidavanzado.prueba;
 
 import android.app.Application;
-import android.arch.lifecycle.AndroidViewModel;
+import androidx.lifecycle.AndroidViewModel;
 
 import androidx.lifecycle.LiveData;
 

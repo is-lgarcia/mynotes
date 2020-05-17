@@ -1,14 +1,18 @@
 package com.androidavanzado.prueba.view.fragment;
 
-import android.arch.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -57,6 +61,9 @@ public class NotaFragment extends Fragment {
         if (getArguments() != null) {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
         }
+
+        //Indicamos que el fragmento tiene un menu de opciones propio.
+        setHasOptionsMenu(true);
     }
 
     @Override
@@ -97,5 +104,25 @@ public class NotaFragment extends Fragment {
         });
     }
 
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.option_menu_nota_fragment, menu);
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.action_add_nota:
+                mostrarDialogNuevaNota();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void mostrarDialogNuevaNota() {
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        NewNotaDialogFragment dialogFragment = new NewNotaDialogFragment();
+        dialogFragment.show(fragmentManager, "NewNotaDialogFragment");
+    }
 }
